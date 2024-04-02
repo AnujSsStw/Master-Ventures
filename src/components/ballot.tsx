@@ -20,7 +20,7 @@ export function Ballot({ item, category }: { item: Items; category: string }) {
       key={item.id}
       className={`relative group ${
         selected.some((movie) => movie.movie.id === item.id)
-          ? "border-4 rounded border-transparent border-green-500"
+          ? "bg-green-500 bg-opacity-50 border-4 rounded border-transparent border-green-500"
           : ""
       } cursor-pointer`}
     >
