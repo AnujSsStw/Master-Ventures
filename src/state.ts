@@ -18,7 +18,9 @@ export const useMovieSelectionStore = create<Movie>((set) => ({
   addMovie: (details: Items, category: string) =>
     set((state) => ({
       count: state.count + 1,
-      movies: [...state.movies, { movie: details, category }],
+      movies: state.movies
+        .filter((movie) => movie.category !== category)
+        .concat({ movie: details, category }),
     })),
   removeMovie: (id: string, category: string) =>
     set((state) => ({
